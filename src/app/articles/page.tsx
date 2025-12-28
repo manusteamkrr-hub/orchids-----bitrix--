@@ -85,12 +85,52 @@ export default function ArticlesIndexPage() {
             <Link href="/articles" className="text-sm font-bold text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary">Статьи</Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button size="lg" className="rounded-2xl font-bold px-6 shadow-xl shadow-primary/20 hover:scale-105 transition-all" asChild>
+            <Button size="lg" className="hidden sm:flex rounded-2xl font-bold px-6 shadow-xl shadow-primary/20 hover:scale-105 transition-all" asChild>
               <a href="tel:88612906619">
                 <Phone className="mr-2 h-5 w-5" />
                 8 (861) 290-66-19
               </a>
             </Button>
+
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                  <Menu className="h-6 w-6 text-primary" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px]">
+                <SheetHeader>
+                  <SheetTitle className="text-left text-primary font-bold">Меню</SheetTitle>
+                </SheetHeader>
+                <nav className="mt-8 flex flex-col gap-4">
+                  <Link href="/" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Главная</Link>
+                  <Link href="/articles" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors py-3 border-b">Статьи</Link>
+                  <div className="mt-4 pt-4">
+                    <p className="text-sm text-muted-foreground mb-4">Свяжитесь с нами:</p>
+                    <div className="flex flex-col gap-3">
+                      <Button className="w-full justify-start bg-primary text-primary-foreground font-bold py-6" asChild>
+                        <a href="tel:88612906619">
+                          <Phone className="mr-2 h-5 w-5" />
+                          8 (861) 290-66-19
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="w-full justify-start border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold py-6" asChild>
+                        <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
+                          <MessageSquare className="mr-2 h-5 w-5" />
+                          WhatsApp
+                        </a>
+                      </Button>
+                      <Button variant="outline" className="w-full justify-start border-[#229ED9] text-[#229ED9] hover:bg-[#229ED9] hover:text-white font-bold py-6" asChild>
+                        <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer">
+                          <Send className="mr-2 h-5 w-5" />
+                          Telegram
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
