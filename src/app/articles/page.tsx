@@ -5,7 +5,7 @@ import Link from "next/link";
 import { 
   Heart, Phone, ArrowRight, Search, BookOpen, 
   Brain, Users, ShieldAlert, Sparkles, Activity,
-  Stethoscope, Clock, Zap
+  Stethoscope, Clock, Zap, MessageSquare, Send, Mail
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
