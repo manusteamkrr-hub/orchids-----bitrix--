@@ -247,16 +247,67 @@ export default function ArticlePage() {
         </div>
       </main>
 
-      <footer className="border-t py-24 bg-white">
-        <div className="container mx-auto px-4 lg:px-8 text-center">
-          <div className="flex justify-center items-center gap-2 mb-8">
-            <Heart className="h-6 w-6 text-primary fill-current" />
-            <span className="text-xl font-black text-primary">Extramed-Psy</span>
+      <footer className="border-t py-24 bg-white relative z-10">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-12 items-center text-center md:text-left">
+            <div className="space-y-6">
+              <Link href="/" className="flex items-center gap-3 justify-center md:justify-start">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-lg shadow-primary/20">
+                  <Heart className="h-6 w-6 fill-current" />
+                </div>
+                <span className="text-xl font-black text-primary">Extramed-Psy</span>
+              </Link>
+              <p className="text-slate-500 text-sm max-w-xs mx-auto md:mx-0 leading-relaxed">
+                Профессиональная медицинская помощь и заботливый уход за вашими близкими в Краснодаре.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 items-center">
+              <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs mb-2">Навигация</h4>
+              <Link href="/" className="text-sm font-bold text-slate-500 hover:text-primary transition-colors">Главная</Link>
+              <Link href="/articles" className="text-sm font-bold text-slate-500 hover:text-primary transition-colors">Все статьи</Link>
+              <Link href="/#pricing" className="text-sm font-bold text-slate-500 hover:text-primary transition-colors">Цены</Link>
+            </div>
+            <div className="space-y-6 text-center md:text-right">
+              <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs mb-2">Контакты</h4>
+              <div className="flex flex-col gap-3">
+                <a href="tel:88612906619" className="text-2xl font-black text-primary hover:opacity-80 transition-opacity tracking-tight">8 (861) 290-66-19</a>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Телефон клиники</p>
+              </div>
+              
+              <div className="pt-4 space-y-4">
+                <div className="flex flex-col gap-1">
+                  <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-700 hover:text-primary transition-colors flex items-center justify-center md:justify-end gap-2">
+                    <MessageSquare className="w-5 h-5 text-[#25D366]" /> +7 (928) 257-91-15
+                  </a>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">WhatsApp консультации</p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-700 hover:text-primary transition-colors flex items-center justify-center md:justify-end gap-2">
+                    <Send className="w-5 h-5 text-[#229ED9]" /> @ExtraMed93
+                  </a>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Telegram канал</p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:alexsamara134@yandex.ru" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center justify-center md:justify-end gap-2">
+                    <Mail className="w-4 h-4 text-primary" /> alexsamara134@yandex.ru
+                  </a>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Электронная почта</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="text-slate-400 text-xs font-bold uppercase tracking-widest max-w-md mx-auto leading-relaxed">
-            Информация на сайте носит справочный характер. <br />
-            Для постановки диагноза и назначения лечения необходима консультация специалиста.
-          </p>
+          <div className="mt-20 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-slate-400 text-xs font-medium">
+              © 2024 Extramed-Psy. Все права защищены.
+            </p>
+            <div className="flex gap-6">
+              <Link href="#" className="text-slate-400 hover:text-primary transition-colors"><Users className="w-5 h-5" /></Link>
+              <Link href="#" className="text-slate-400 hover:text-primary transition-colors"><Activity className="w-5 h-5" /></Link>
+              <Link href="#" className="text-slate-400 hover:text-primary transition-colors"><ShieldAlert className="w-5 h-5" /></Link>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
