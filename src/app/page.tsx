@@ -442,20 +442,38 @@ export default function LandingPage() {
             </div>
             <div>
               <h4 className="font-black text-slate-900 mb-8 uppercase tracking-widest text-xs">Контакты</h4>
-              <ul className="space-y-6">
+              <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-slate-500 font-bold justify-center md:justify-start">
                   <MapPin className="h-5 w-5 text-purple-600 shrink-0 mt-1" />
-                  <span>г. Краснодар, ул. Лизы Чайкиной</span>
+                  <span>г. Краснодар, ул. Лизы Чайкиной, д. 3/6, этаж 2</span>
                 </li>
                 <li className="flex items-center gap-3 font-black text-purple-700 text-xl justify-center md:justify-start">
                   <Phone className="h-6 w-6" /> 
                   <a href="tel:88612906619">8 (861) 290-66-19</a>
                 </li>
+                <li className="flex items-center gap-3 text-slate-500 font-bold justify-center md:justify-start">
+                  <Mail className="h-5 w-5 text-purple-600 shrink-0" />
+                  <a href="mailto:alexsamara134@yandex.ru">alexsamara134@yandex.ru</a>
+                </li>
+                <li className="flex items-center gap-3 text-slate-500 font-bold justify-center md:justify-start">
+                  <MessageSquare className="h-5 w-5 text-[#25D366] shrink-0" />
+                  <span>WA: 8 (861) 290-66-19</span>
+                </li>
+                <li className="flex items-center gap-3 text-slate-500 font-bold justify-center md:justify-start">
+                  <Send className="h-5 w-5 text-[#229ED9] shrink-0" />
+                  <span>TG: @ExtraMed93</span>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t pt-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm font-bold text-slate-400">
-            <p>© 2024 Extramed-Psy. Все права защищены.</p>
+            <div className="text-center md:text-left space-y-1">
+              <p>© 2024 Extramed-Psy. Все права защищены.</p>
+              <p className="text-[10px] uppercase tracking-wider opacity-70">
+                Медицинские услуги оказывает ООО “ЭКСТРАМЕД” <br />
+                ИНН 2312324163 | Лицензия Л041-01126-23/01219708
+              </p>
+            </div>
             <div className="flex gap-8">
               <a href="#" className="hover:text-purple-600 transition-colors">Политика конфиденциальности</a>
             </div>
