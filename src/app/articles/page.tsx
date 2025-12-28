@@ -109,7 +109,7 @@ const categories = [
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <Badge className="mb-6 px-4 py-1.5 rounded-full bg-primary/10 text-primary border-none font-bold text-xs uppercase tracking-widest">
-                <Sparkles className="w-3 h-3 mr-2 fill-current" /> База знаний
+                <Sparkles className="w-3 h-3 mr-2 fill-current" /> База знаний • {articles.length} статей
               </Badge>
               <h1 className="text-5xl md:text-7xl font-black text-[#0f172a] mb-8 leading-[1.1] tracking-tight">
                 Полезные статьи <br /> 
