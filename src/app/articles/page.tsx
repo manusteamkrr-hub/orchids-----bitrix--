@@ -23,102 +23,80 @@ import { articles } from "@/lib/articles-data";
 import { motion, AnimatePresence } from "framer-motion";
 
 const categories = [
-  { id: "all", label: "Все статьи", icon: <BookOpen className="w-4 h-4" /> },
-  { id: "elderly", label: "Пожилым", icon: <Users className="w-4 h-4" /> },
-  { id: "psychiatry", label: "Психиатрия", icon: <Brain className="w-4 h-4" /> },
-  { id: "rehab", label: "Реабилитация", icon: <Activity className="w-4 h-4" /> },
-  { id: "emergency", label: "Экстренная помощь", icon: <ShieldAlert className="w-4 h-4" /> },
-];
-
-export default function ArticlesIndexPage() {
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [activeCategory, setActiveCategory] = React.useState("all");
-
-  const filteredArticles = useMemo(() => {
-    return articles.filter((article) => {
-      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
-      const matchesCategory = activeCategory === "all" || article.category === activeCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchTerm, activeCategory]);
-
-  const featuredArticle = filteredArticles[0];
-  const remainingArticles = filteredArticles.slice(1);
-
-  return (
-    <div className="min-h-screen bg-[#fafafa] text-[#1a1a1a] selection:bg-primary/20">
-      {/* Background Elements */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: "2s" }} />
-      </div>
-
-      {/* Header */}
-      <header className="fixed top-0 z-50 w-full border-b bg-white/70 backdrop-blur-xl">
-        <div className="container mx-auto flex h-20 items-center justify-between px-4 lg:px-8">
-          <Link href="/" className="flex items-center gap-3 group transition-transform active:scale-95">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/20 rotate-[-5deg] group-hover:rotate-0 transition-transform">
-              <Heart className="h-7 w-7 fill-current" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-2xl font-black tracking-tight text-primary leading-tight">Extramed-Psy</span>
-              <span className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground font-bold italic">Центр Заботы</span>
-            </div>
-          </Link>
-          <nav className="hidden md:flex items-center gap-8 mr-auto ml-12">
-            <Link href="/" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors">Главная</Link>
-            <Link href="/articles" className="text-sm font-bold text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary">Статьи</Link>
-          </nav>
-          <div className="flex items-center gap-4">
-            <Button size="lg" className="hidden sm:flex rounded-2xl font-bold px-6 shadow-xl shadow-primary/20 hover:scale-105 transition-all" asChild>
-              <a href="tel:88612906619">
-                <Phone className="mr-2 h-5 w-5" />
-                8 (861) 290-66-19
-              </a>
-            </Button>
-
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6 text-primary" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
-                <SheetHeader>
-                  <SheetTitle className="text-left text-primary font-bold">Меню</SheetTitle>
-                </SheetHeader>
-                <nav className="mt-8 flex flex-col gap-4">
-                  <Link href="/" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Главная</Link>
-                  <Link href="/articles" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors py-3 border-b">Статьи</Link>
-                  <div className="mt-4 pt-4">
-                    <p className="text-sm text-muted-foreground mb-4">Свяжитесь с нами:</p>
-                    <div className="flex flex-col gap-3">
-                      <Button className="w-full justify-start bg-primary text-primary-foreground font-bold py-6" asChild>
-                        <a href="tel:88612906619">
-                          <Phone className="mr-2 h-5 w-5" />
-                          8 (861) 290-66-19
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="w-full justify-start border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold py-6" asChild>
-                        <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
-                          <MessageSquare className="mr-2 h-5 w-5" />
-                          WhatsApp
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="w-full justify-start border-[#229ED9] text-[#229ED9] hover:bg-[#229ED9] hover:text-white font-bold py-6" asChild>
-                        <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer">
-                          <Send className="mr-2 h-5 w-5" />
-                          Telegram
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+    { id: "all", label: "Все статьи", icon: <BookOpen className="w-4 h-4" /> },
+    { id: "elderly", label: "Пожилым", icon: <Users className="w-4 h-4" /> },
+    { id: "psychiatry", label: "Психиатрия", icon: <Brain className="w-4 h-4" /> },
+    { id: "rehab", label: "Реабилитация", icon: <Activity className="w-4 h-4" /> },
+    { id: "emergency", label: "Экстренная помощь", icon: <ShieldAlert className="w-4 h-4" /> },
+  ];
+  
+  export default function ArticlesIndexPage() {
+    const [searchTerm, setSearchTerm] = React.useState("");
+    const [activeCategory, setActiveCategory] = React.useState("all");
+  
+    const filteredArticles = useMemo(() => {
+      return articles.filter((article) => {
+        const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesCategory = activeCategory === "all" || article.category === activeCategory;
+        return matchesSearch && matchesCategory;
+      });
+    }, [searchTerm, activeCategory]);
+  
+    const featuredArticle = filteredArticles[0];
+    const remainingArticles = filteredArticles.slice(1);
+  
+    return (
+      <div className="min-h-screen bg-[#fafafa] text-[#1e1b4b] selection:bg-purple-200 selection:text-purple-900">
+        {/* Background Elements */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/5 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-indigo-500/5 rounded-full blur-[120px]" />
         </div>
-      </header>
+  
+        {/* Header */}
+        <header className="fixed top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
+          <div className="container mx-auto flex h-20 items-center justify-between px-4">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-600 text-white shadow-lg shadow-purple-200 rotate-[-5deg]">
+                <Heart className="h-7 w-7 fill-current" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tighter text-purple-700 leading-none">Extramed-Psy</span>
+                <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Краснодар</span>
+              </div>
+            </Link>
+            <nav className="hidden md:flex items-center gap-8 mr-auto ml-12">
+              <Link href="/" className="text-sm font-bold text-slate-600 hover:text-purple-600 transition-colors">Главная</Link>
+              <Link href="/articles" className="text-sm font-black text-purple-600 transition-colors border-b-2 border-purple-600">База знаний</Link>
+            </nav>
+            <div className="flex items-center gap-4">
+              <Button size="lg" className="hidden sm:flex rounded-2xl font-black px-6 bg-purple-600 hover:bg-purple-700 shadow-xl shadow-purple-200" asChild>
+                <a href="tel:88612906619">
+                  <Phone className="mr-2 h-5 w-5" />
+                  8 (861) 290-66-19
+                </a>
+              </Button>
+  
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-7 w-7 text-purple-600" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <SheetHeader>
+                    <SheetTitle className="text-left text-purple-700 font-black">Меню</SheetTitle>
+                  </SheetHeader>
+                  <nav className="mt-8 flex flex-col gap-4">
+                    <Link href="/" className="text-lg font-bold hover:text-purple-600 py-3 border-b">Главная</Link>
+                    <Link href="/articles" className="text-lg font-black text-purple-600 py-3 border-b">База знаний</Link>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
+        </header>
+
 
       <main className="relative z-10 pt-32 pb-32">
         <div className="container mx-auto px-4 lg:px-8">
