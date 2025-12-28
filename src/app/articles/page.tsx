@@ -34,28 +34,13 @@ export default function ArticlesIndexPage() {
   const [searchTerm, setSearchTerm] = React.useState("");
   const [activeCategory, setActiveCategory] = React.useState("all");
 
-  const articlesWithCategories = useMemo(() => {
-    return articles.map(article => {
-      let category = "psychiatry";
-      const title = article.title.toLowerCase();
-      
-      if (title.includes("пожилых") || title.includes("деменци") || title.includes("альцгеймер") || title.includes("паркинсон") || title.includes("дом заботы")) {
-        category = "elderly";
-      } else if (title.includes("реабилитация") || title.includes("инсульт")) {
-        category = "rehab";
-      } else if (title.includes("на дом") || title.includes("скорая") || title.includes("делири") || title.includes("экстрен")) {
-        category = "emergency";
-      }
-      
-      return { ...article, category };
+  const filteredArticles = useMemo(() => {
+    return articles.filter((article) => {
+      const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = activeCategory === "all" || article.category === activeCategory;
+      return matchesSearch && matchesCategory;
     });
-  }, []);
-
-  const filteredArticles = articlesWithCategories.filter((article) => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeCategory === "all" || article.category === activeCategory;
-    return matchesSearch && matchesCategory;
-  });
+  }, [searchTerm, activeCategory]);
 
   const featuredArticle = filteredArticles[0];
   const remainingArticles = filteredArticles.slice(1);
@@ -206,20 +191,17 @@ export default function ArticlesIndexPage() {
               {filteredArticles.length > 0 ? (
                 <div className="space-y-12">
                   {/* Featured Article */}
-                  {searchTerm === "" && (
+                  {searchTerm === "" && featuredArticle && (
                     <motion.div
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 }}
                     >
                       <Link href={`/articles/${featuredArticle.slug}`}>
-                        <div className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-2xl flex flex-col lg:flex-row min-h-[400px] border border-slate-100 hover:border-primary/20 transition-all active:scale-[0.99]">
-                          <div className="lg:w-1/2 bg-primary/5 p-12 flex flex-col justify-center gap-6 relative">
-                            <div className="absolute top-0 right-0 p-8 opacity-10">
-                              <Sparkles className="w-32 h-32 text-primary" />
-                            </div>
+                        <div className="group relative overflow-hidden rounded-[2.5rem] bg-white shadow-2xl flex flex-col lg:flex-row min-h-[450px] border border-slate-100 hover:border-primary/20 transition-all active:scale-[0.99]">
+                          <div className="lg:w-1/2 p-12 flex flex-col justify-center gap-6 relative">
                             <div className="flex items-center gap-3 text-primary">
-                              <Badge className="bg-primary text-white px-4 py-1 rounded-lg">Важное</Badge>
+                              <Badge className="bg-primary text-white px-4 py-1 rounded-lg">Популярное</Badge>
                               <span className="text-sm font-bold flex items-center gap-1 opacity-70">
                                 <Clock className="w-4 h-4" /> 5 мин чтения
                               </span>
@@ -234,18 +216,13 @@ export default function ArticlesIndexPage() {
                               Читать материал <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
                             </div>
                           </div>
-                          <div className="lg:w-1/2 bg-slate-100 relative overflow-hidden flex items-center justify-center min-h-[300px] lg:min-h-full">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20 mix-blend-multiply opacity-20" />
-                            <Zap className="w-48 h-48 text-primary/10 group-hover:scale-110 transition-transform duration-700" />
-                            <div className="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur-md p-6 rounded-[1.5rem] shadow-xl border border-white/50">
-                              <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-xl">E</div>
-                                <div>
-                                  <p className="text-sm font-black text-slate-900 leading-none">Команда Extramed</p>
-                                  <p className="text-xs text-slate-500 mt-1">Медицинский отдел</p>
-                                </div>
-                              </div>
-                            </div>
+                          <div className="lg:w-1/2 relative overflow-hidden min-h-[300px] lg:min-h-full">
+                            <img 
+                              src={featuredArticle.image} 
+                              alt={featuredArticle.title}
+                              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/10 lg:to-white/20" />
                           </div>
                         </div>
                       </Link>
@@ -263,19 +240,21 @@ export default function ArticlesIndexPage() {
                       >
                         <Link href={`/articles/${article.slug}`}>
                           <Card className="h-full flex flex-col hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] transition-all border border-slate-100 rounded-[2rem] bg-white group cursor-pointer overflow-hidden active:scale-95">
-                            <div className="aspect-[16/10] bg-slate-50 relative overflow-hidden">
-                              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-blue-500/10 group-hover:scale-110 transition-transform duration-700" />
+                            <div className="aspect-[16/10] relative overflow-hidden">
+                              <img 
+                                src={article.image} 
+                                alt={article.title}
+                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                              />
+                              <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
                               <div className="absolute top-6 left-6">
                                 <Badge className="bg-white/90 backdrop-blur-sm text-primary font-bold shadow-sm border-none px-3 py-1 rounded-xl">
                                   {categories.find(c => c.id === article.category)?.label || "Статья"}
                                 </Badge>
                               </div>
-                              <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                                {categories.find(c => c.id === article.category)?.icon}
-                              </div>
                             </div>
                             <CardHeader className="pt-8 px-8">
-                              <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-primary leading-tight transition-colors">
+                              <CardTitle className="text-xl font-bold text-slate-900 group-hover:text-primary leading-tight transition-colors line-clamp-2">
                                 {article.title}
                               </CardTitle>
                             </CardHeader>
