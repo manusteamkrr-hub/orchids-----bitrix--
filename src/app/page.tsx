@@ -79,39 +79,57 @@ export default function LandingPage() {
             <a href="#contacts" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <Button variant="outline" className="hidden sm:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold">
-              <Phone className="mr-2 h-4 w-4" />
-              +7 (861) 000-00-00
-            </Button>
-            
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
-                  <Menu className="h-6 w-6 text-primary" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                  <SheetTitle className="text-left text-primary font-bold">Меню</SheetTitle>
-                </SheetHeader>
-                <nav className="mt-8 flex flex-col gap-4">
-                  <a href="#conditions" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">С чем работаем</a>
-                  <a href="#approach" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Наш подход</a>
-                  <a href="#prices" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Стоимость</a>
-                  <a href="#reviews" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Отзывы</a>
-                  <a href="/articles" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors py-3 border-b">Статьи</a>
-                  <div className="mt-4 pt-4">
-                    <p className="text-sm text-muted-foreground mb-4">Свяжитесь с нами:</p>
-                    <Button className="w-full justify-start bg-primary text-primary-foreground font-bold py-6">
-                      <Phone className="mr-2 h-5 w-5" />
-                      +7 (861) 000-00-00
-                    </Button>
-                  </div>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+            <div className="flex items-center gap-4">
+              <Button variant="outline" className="hidden sm:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold" asChild>
+                <a href="tel:88612906619">
+                  <Phone className="mr-2 h-4 w-4" />
+                  8 (861) 290-66-19
+                </a>
+              </Button>
+              
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="lg:hidden">
+                    <Menu className="h-6 w-6 text-primary" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                  <SheetHeader>
+                    <SheetTitle className="text-left text-primary font-bold">Меню</SheetTitle>
+                  </SheetHeader>
+                  <nav className="mt-8 flex flex-col gap-4">
+                    <a href="#conditions" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">С чем работаем</a>
+                    <a href="#approach" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Наш подход</a>
+                    <a href="#prices" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Стоимость</a>
+                    <a href="#reviews" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Отзывы</a>
+                    <a href="/articles" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors py-3 border-b">Статьи</a>
+                    <div className="mt-4 pt-4">
+                      <p className="text-sm text-muted-foreground mb-4">Свяжитесь с нами:</p>
+                      <div className="flex flex-col gap-3">
+                        <Button className="w-full justify-start bg-primary text-primary-foreground font-bold py-6" asChild>
+                          <a href="tel:88612906619">
+                            <Phone className="mr-2 h-5 w-5" />
+                            8 (861) 290-66-19
+                          </a>
+                        </Button>
+                        <Button variant="outline" className="w-full justify-start border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold py-6" asChild>
+                          <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
+                            <MessageSquare className="mr-2 h-5 w-5" />
+                            WhatsApp
+                          </a>
+                        </Button>
+                        <Button variant="outline" className="w-full justify-start border-[#229ED9] text-[#229ED9] hover:bg-[#229ED9] hover:text-white font-bold py-6" asChild>
+                          <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer">
+                            <Send className="mr-2 h-5 w-5" />
+                            Telegram
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
         </div>
       </header>
 
