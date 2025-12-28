@@ -75,6 +75,7 @@ export default function LandingPage() {
             <a href="#approach" className="text-sm font-medium hover:text-primary transition-colors">Наш подход</a>
             <a href="#prices" className="text-sm font-medium hover:text-primary transition-colors">Стоимость</a>
             <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">Отзывы</a>
+            <a href="/articles" className="text-sm font-bold text-primary hover:text-primary/80 transition-colors">Статьи</a>
             <a href="#contacts" className="text-sm font-medium hover:text-primary transition-colors">Контакты</a>
           </nav>
 
