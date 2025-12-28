@@ -5,12 +5,20 @@ import Link from "next/link";
 import { 
   Heart, Phone, ArrowRight, Search, BookOpen, 
   Brain, Users, ShieldAlert, Sparkles, Activity,
-  Stethoscope, Clock, Zap, MessageSquare, Send, Mail
+  Stethoscope, Clock, Zap, MessageSquare, Send, Mail,
+  Menu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { articles } from "@/lib/articles-data";
 import { motion, AnimatePresence } from "framer-motion";
 
