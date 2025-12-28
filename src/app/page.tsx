@@ -564,18 +564,21 @@ export default function LandingPage() {
               Время — самый ценный ресурс. <br className="hidden sm:block" /> Не теряйте его в сомнениях.
             </h2>
             <p className="mx-auto mb-12 max-w-3xl text-lg sm:text-2xl opacity-90 leading-relaxed font-medium">
-              Позвоните по номеру <span className="underline underline-offset-8 decoration-white/30">+7 (861) 000-00-00</span> прямо сейчас, чтобы получить ответы на все вопросы, узнать о свободных местах и стоимости проживания. Позаботьтесь о своем близком с профессионалами.
+              Позвоните по номеру <span className="underline underline-offset-8 decoration-white/30">8 (861) 290-66-19</span> прямо сейчас, чтобы получить ответы на все вопросы, узнать о свободных местах и стоимости проживания. Позаботьтесь о своем близком с профессионалами.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <a href="tel:+78610000000" className="w-full sm:w-auto">
-                <Button size="lg" variant="secondary" className="rounded-full w-full px-12 h-20 text-xl font-black hover:scale-105 transition-transform shadow-[0_20px_50px_rgba(0,0,0,0.2)] text-primary">
+              <a href="tel:88612906619" className="w-full sm:w-auto">
+                <Button size="lg" variant="secondary" className="rounded-full w-full px-12 h-20 text-xl font-black hover:scale-105 transition-transform shadow-[0_20px_50_rgba(0,0,0,0.2)] text-primary">
                   <Phone className="mr-4 h-7 w-7" />
-                  Позвонить в пансионат
+                  8 (861) 290-66-19
                 </Button>
               </a>
-              <Button size="lg" variant="outline" className="rounded-full w-full sm:w-auto px-12 h-20 text-xl font-bold border-white/20 hover:bg-white/10 text-white">
-                Задать вопрос в WhatsApp
-              </Button>
+              <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="rounded-full w-full px-12 h-20 text-xl font-bold border-white/20 hover:bg-white/10 text-white">
+                  <MessageSquare className="mr-4 h-7 w-7" />
+                  Написать в WhatsApp
+                </Button>
+              </a>
             </div>
           </div>
           <div className="absolute top-0 left-0 w-[40rem] h-[40rem] bg-white/5 blur-[150px] rounded-full -translate-x-1/2 -translate-y-1/2" />
