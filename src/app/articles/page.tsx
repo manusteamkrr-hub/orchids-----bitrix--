@@ -26,6 +26,7 @@ const categories = [
     { id: "all", label: "Все статьи", icon: <BookOpen className="w-4 h-4" /> },
     { id: "elderly", label: "Пожилым", icon: <Users className="w-4 h-4" /> },
     { id: "psychiatry", label: "Психиатрия", icon: <Brain className="w-4 h-4" /> },
+    { id: "psychotherapy", label: "Психотерапия", icon: <Activity className="w-4 h-4" /> },
     { id: "rehab", label: "Реабилитация", icon: <Activity className="w-4 h-4" /> },
     { id: "emergency", label: "Экстренная помощь", icon: <ShieldAlert className="w-4 h-4" /> },
   ];
