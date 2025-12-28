@@ -24,7 +24,8 @@ import { motion, useScroll, useSpring } from "framer-motion";
 export default function ArticlePage() {
   const { slug } = useParams();
   const router = useRouter();
-  const article = articles.find((a) => a.slug === slug);
+  const decodedSlug = typeof slug === 'string' ? decodeURIComponent(slug) : '';
+  const article = articles.find((a) => a.slug === decodedSlug);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
