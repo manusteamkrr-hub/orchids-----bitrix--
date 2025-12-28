@@ -72,12 +72,14 @@ export default function ArticlePage() {
             <Link href="/" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors">Главная</Link>
             <Link href="/articles" className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors">Статьи</Link>
           </nav>
-          <div className="flex items-center gap-4">
-            <Button className="rounded-2xl font-bold px-6 shadow-xl shadow-primary/20">
-              <Phone className="mr-2 h-4 w-4" />
-              +7 (861) 000-00-00
-            </Button>
-          </div>
+            <div className="flex items-center gap-4">
+              <Button className="rounded-2xl font-bold px-6 shadow-xl shadow-primary/20" asChild>
+                <a href="tel:88612906619">
+                  <Phone className="mr-2 h-4 w-4" />
+                  8 (861) 290-66-19
+                </a>
+              </Button>
+            </div>
         </div>
       </header>
 
