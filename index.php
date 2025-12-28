@@ -386,7 +386,7 @@ if ($page === 'articles') {
                     </div>
                 </div>
                 <div class="hero-img">
-                    <img src="/images/clinic-hero.webp" alt="Пансионат Extramed-Psy">
+                    <img src="images/clinic-hero.webp" alt="Пансионат Extramed-Psy">
                 </div>
             </div>
         </section>
