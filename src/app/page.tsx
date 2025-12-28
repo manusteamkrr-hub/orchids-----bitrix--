@@ -42,6 +42,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 import Link from "next/link";
 
@@ -60,13 +61,13 @@ const stagger = {
 };
 
 const clinicPhotos = [
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-3-1766937060085.webp", caption: "Здание клиники" },
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-1-1766937060016.webp", caption: "Уютные палаты" },
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-4-1766937060085.webp", caption: "Просторные холлы" },
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-5-1766937060085.webp", caption: "Зона отдыха" },
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-6-1766937060090.webp", caption: "Современные коридоры" },
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-7-1766937059997.webp", caption: "Комфортные номера" },
-  { url: "https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-1766937059993.webp", caption: "Внешний вид" },
+  { url: "/images/clinic-3.webp", caption: "Здание клиники" },
+  { url: "/images/clinic-1.webp", caption: "Уютные палаты" },
+  { url: "/images/clinic-4.webp", caption: "Просторные холлы" },
+  { url: "/images/clinic-5.webp", caption: "Зона отдыха" },
+  { url: "/images/clinic-6.webp", caption: "Современные коридоры" },
+  { url: "/images/clinic-7.webp", caption: "Комфортные номера" },
+  { url: "/images/clinic-hero.webp", caption: "Внешний вид" },
 ];
 
 export default function LandingPage() {
@@ -98,7 +99,6 @@ export default function LandingPage() {
           
           <nav className="hidden lg:flex items-center gap-8">
             <a href="#conditions" className="text-sm font-bold text-slate-600 hover:text-purple-600 transition-colors">С чем работаем</a>
-            <a href="#approach" className="text-sm font-bold text-slate-600 hover:text-purple-600 transition-colors">Наш подход</a>
             <a href="#prices" className="text-sm font-bold text-slate-600 hover:text-purple-600 transition-colors">Стоимость</a>
             <Link href="/articles" className="text-sm font-black text-purple-600 hover:text-purple-700 transition-colors border-b-2 border-purple-600">База знаний</Link>
             <a href="#contacts" className="text-sm font-bold text-slate-600 hover:text-purple-600 transition-colors">Контакты</a>
@@ -114,80 +114,96 @@ export default function LandingPage() {
             
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden">
+                <Button variant="ghost" size="icon" className="lg:hidden rounded-xl bg-purple-50 hover:bg-purple-100">
                   <Menu className="h-7 w-7 text-purple-600" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <SheetHeader>
-                  <SheetTitle className="text-left text-purple-700 font-black text-2xl">Меню</SheetTitle>
-                </SheetHeader>
-                <nav className="mt-8 flex flex-col gap-2">
-                  <a href="#conditions" className="text-lg font-bold text-slate-700 hover:text-purple-600 py-4 border-b">С чем работаем</a>
-                  <a href="#approach" className="text-lg font-bold text-slate-700 hover:text-purple-600 py-4 border-b">Наш подход</a>
-                  <a href="#prices" className="text-lg font-bold text-slate-700 hover:text-purple-600 py-4 border-b">Стоимость</a>
-                  <Link href="/articles" className="text-lg font-black text-purple-600 py-4 border-b">База знаний</Link>
-                  <div className="mt-6">
-                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Свяжитесь с нами:</p>
-                    <div className="flex flex-col gap-3">
-                      <Button className="w-full justify-start bg-purple-600 text-white font-bold py-7 rounded-2xl" asChild>
-                        <a href="tel:88612906619">
-                          <Phone className="mr-3 h-6 w-6" />
-                          8 (861) 290-66-19
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="w-full justify-start border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold py-7 rounded-2xl" asChild>
-                        <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
-                          <MessageSquare className="mr-3 h-6 w-6" />
-                          WhatsApp
-                        </a>
-                      </Button>
-                      <Button variant="outline" className="w-full justify-start border-[#229ED9] text-[#229ED9] hover:bg-[#229ED9] hover:text-white font-bold py-7 rounded-2xl" asChild>
-                        <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer">
-                          <Send className="mr-3 h-6 w-6" />
-                          Telegram
-                        </a>
-                      </Button>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-purple-100 p-0">
+                <div className="flex flex-col h-full bg-white">
+                  <div className="p-6 border-b border-purple-50">
+                    <div className="flex items-center gap-3">
+                      <div className="h-10 w-10 bg-purple-600 rounded-xl flex items-center justify-center text-white rotate-[-5deg]">
+                        <Heart className="h-6 w-6 fill-current" />
+                      </div>
+                      <span className="text-xl font-black text-purple-700">МЕНЮ</span>
                     </div>
                   </div>
-                </nav>
+                  <nav className="flex-1 overflow-y-auto p-6 flex flex-col gap-1">
+                    <SheetClose asChild>
+                      <a href="#conditions" className="text-lg font-bold text-slate-700 hover:text-purple-600 py-4 px-4 hover:bg-purple-50 rounded-2xl transition-all border-b border-slate-50">С чем работаем</a>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <a href="#prices" className="text-lg font-bold text-slate-700 hover:text-purple-600 py-4 px-4 hover:bg-purple-50 rounded-2xl transition-all border-b border-slate-50">Стоимость</a>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <Link href="/articles" className="text-lg font-black text-purple-600 py-4 px-4 hover:bg-purple-50 rounded-2xl transition-all border-b border-slate-50">База знаний</Link>
+                    </SheetClose>
+                    <SheetClose asChild>
+                      <a href="#contacts" className="text-lg font-bold text-slate-700 hover:text-purple-600 py-4 px-4 hover:bg-purple-50 rounded-2xl transition-all">Контакты</a>
+                    </SheetClose>
+                    
+                    <div className="mt-8">
+                      <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4 ml-4">Свяжитесь с нами</p>
+                      <div className="flex flex-col gap-3">
+                        <Button className="w-full justify-start bg-purple-600 text-white font-bold h-16 rounded-2xl px-6" asChild>
+                          <a href="tel:88612906619">
+                            <Phone className="mr-3 h-5 w-5" />
+                            8 (861) 290-66-19
+                          </a>
+                        </Button>
+                        <Button variant="outline" className="w-full justify-start border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-bold h-16 rounded-2xl px-6" asChild>
+                          <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
+                            <MessageSquare className="mr-3 h-5 w-5" />
+                            WhatsApp
+                          </a>
+                        </Button>
+                        <Button variant="outline" className="w-full justify-start border-[#229ED9] text-[#229ED9] hover:bg-[#229ED9] hover:text-white font-bold h-16 rounded-2xl px-6" asChild>
+                          <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer">
+                            <Send className="mr-3 h-5 w-5" />
+                            Telegram
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
+                  </nav>
+                </div>
               </SheetContent>
             </Sheet>
           </div>
         </div>
       </header>
 
-      {/* Side Floating CTA */}
+      {/* Side Floating CTA (Desktop) */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden md:flex flex-col gap-4">
         <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3">
           <span className="bg-white px-3 py-1.5 rounded-lg shadow-xl text-xs font-bold text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">WhatsApp</span>
-          <div className="h-14 w-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+          <div className="h-14 w-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform border-4 border-white">
             <MessageSquare className="h-7 w-7" />
           </div>
         </a>
         <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3">
           <span className="bg-white px-3 py-1.5 rounded-lg shadow-xl text-xs font-bold text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">Telegram</span>
-          <div className="h-14 w-14 rounded-full bg-[#229ED9] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
+          <div className="h-14 w-14 rounded-full bg-[#229ED9] text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform border-4 border-white">
             <Send className="h-7 w-7" />
           </div>
         </a>
         <a href="tel:88612906619" className="group flex items-center gap-3">
           <span className="bg-white px-3 py-1.5 rounded-lg shadow-xl text-xs font-bold text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity translate-x-4 group-hover:translate-x-0">Позвонить</span>
-          <div className="h-14 w-14 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-pulse">
+          <div className="h-14 w-14 rounded-full bg-purple-600 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-pulse border-4 border-white">
             <Phone className="h-7 w-7" />
           </div>
         </a>
       </div>
 
-      {/* Mobile Floating CTA */}
+      {/* Mobile Floating CTA (Mobile Only - Bottom right) */}
       <div className="fixed bottom-6 right-6 z-40 md:hidden flex flex-col gap-3">
         <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
-          <Button size="lg" className="h-16 w-16 rounded-full bg-[#25D366] text-white shadow-2xl border-4 border-white active:scale-95">
+          <Button size="lg" className="h-16 w-16 rounded-full bg-[#25D366] text-white shadow-2xl border-4 border-white active:scale-95 flex items-center justify-center">
             <MessageSquare className="h-8 w-8" />
           </Button>
         </a>
         <a href="tel:88612906619">
-          <Button size="lg" className="h-16 w-16 rounded-full bg-purple-600 text-white shadow-2xl animate-pulse border-4 border-white active:scale-95">
+          <Button size="lg" className="h-16 w-16 rounded-full bg-purple-600 text-white shadow-2xl animate-pulse border-4 border-white active:scale-95 flex items-center justify-center">
             <Phone className="h-8 w-8" />
           </Button>
         </a>
@@ -205,7 +221,7 @@ export default function LandingPage() {
                 className="flex flex-col gap-8 text-center lg:text-left"
               >
                 <motion.div variants={fadeIn}>
-                  <Badge variant="secondary" className="mb-6 bg-purple-100 text-purple-700 px-5 py-2 text-sm font-bold flex w-fit mx-auto lg:mx-0 items-center gap-2 rounded-full">
+                  <Badge variant="secondary" className="mb-6 bg-purple-100 text-purple-700 px-5 py-2 text-sm font-bold flex w-fit mx-auto lg:mx-0 items-center gap-2 rounded-full border border-purple-200">
                     <MapPin className="h-4 w-4" /> г. Краснодар, ул. Лизы Чайкиной
                   </Badge>
                   <h1 className="text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl text-slate-900 leading-[1.05] mb-8">
@@ -231,7 +247,7 @@ export default function LandingPage() {
                 className="relative aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white"
               >
                 <Image 
-                  src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/document-uploads/XXXL-3-1766937060085.webp" 
+                  src="/images/clinic-3.webp" 
                   alt="Пансионат Extramed-Psy"
                   fill
                   className="object-cover"
