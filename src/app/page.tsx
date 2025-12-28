@@ -107,7 +107,7 @@ export default function LandingPage() {
                 className="relative aspect-video lg:aspect-square rounded-3xl overflow-hidden shadow-2xl"
               >
                 <Image 
-                  src="https://images.unsplash.com/photo-1581578731522-745d0514227e?auto=format&fit=crop&q=80" 
+                  src="https://images.unsplash.com/photo-1576091160550-2173dad99a01?auto=format&fit=crop&q=80" 
                   alt="Nursing Home"
                   fill
                   className="object-cover"
