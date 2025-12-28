@@ -312,6 +312,60 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* News Section */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-primary">Новости и события</h2>
+              <Button variant="ghost" className="text-primary hover:text-primary/80">
+                Все новости <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  date: "12 Марта",
+                  title: "Весеннее обновление меню",
+                  text: "Наши диетологи разработали новое сезонное меню с учетом потребностей пожилых людей.",
+                  img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&q=80"
+                },
+                {
+                  date: "05 Марта",
+                  title: "Занятия арт-терапией",
+                  text: "Творческие мастер-классы помогают поддерживать когнитивные функции и дарят радость общения.",
+                  img: "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&q=80"
+                },
+                {
+                  date: "28 Февраля",
+                  title: "Новое оборудование для ЛФК",
+                  text: "Мы обновили зал реабилитации современными тренажерами для восстановления мобильности.",
+                  img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80"
+                }
+              ].map((news, i) => (
+                <Card key={i} className="group overflow-hidden border-none shadow-lg hover:shadow-xl transition-all">
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image 
+                      src={news.img} 
+                      alt={news.title}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-primary text-primary-foreground">{news.date}</Badge>
+                    </div>
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="group-hover:text-primary transition-colors">{news.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{news.text}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Why Us Section */}
         <section className="py-24">
           <div className="container mx-auto px-4">
