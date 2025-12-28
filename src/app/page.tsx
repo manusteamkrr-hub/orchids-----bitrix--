@@ -61,13 +61,13 @@ const stagger = {
 };
 
 const clinicPhotos = [
-  { url: "/images/clinic-3.webp", caption: "Здание клиники" },
-  { url: "/images/clinic-1.webp", caption: "Уютные палаты" },
-  { url: "/images/clinic-4.webp", caption: "Просторные холлы" },
-  { url: "/images/clinic-5.webp", caption: "Зона отдыха" },
-  { url: "/images/clinic-6.webp", caption: "Современные коридоры" },
-  { url: "/images/clinic-7.webp", caption: "Комфортные номера" },
-  { url: "/images/clinic-hero.webp", caption: "Внешний вид" },
+  { url: "/images/clinic-3.png", caption: "Здание клиники" },
+  { url: "/images/clinic-1.png", caption: "Уютные палаты" },
+  { url: "/images/clinic-4.png", caption: "Просторные холлы" },
+  { url: "/images/clinic-5.png", caption: "Зона отдыха" },
+  { url: "/images/clinic-6.png", caption: "Современные коридоры" },
+  { url: "/images/clinic-7.png", caption: "Комфортные номера" },
+  { url: "/images/clinic-hero.png", caption: "Внешний вид" },
 ];
 
 export default function LandingPage() {
