@@ -609,14 +609,29 @@ export default function LandingPage() {
                 <li><a href="#prices" className="hover:text-primary transition-colors">Стоимость</a></li>
               </ul>
             </div>
-            <div>
-              <h4 className="font-bold text-primary mb-6 text-lg">Контакты</h4>
-              <ul className="space-y-4 text-muted-foreground">
-                <li className="flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" /> г. Краснодар, ул. Лизы Чайкиной</li>
-                <li className="flex items-center gap-2 font-bold text-primary"><Phone className="h-5 w-5" /> +7 (861) 000-00-00</li>
-                <li className="text-sm">Круглосуточно без выходных</li>
-              </ul>
-            </div>
+              <div>
+                <h4 className="font-bold text-primary mb-6 text-lg">Контакты</h4>
+                <ul className="space-y-4 text-muted-foreground">
+                  <li className="flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" /> г. Краснодар, ул. Лизы Чайкиной</li>
+                  <li className="flex items-center gap-2 font-bold text-primary underline underline-offset-4 decoration-primary/20 hover:decoration-primary/50 transition-all">
+                    <Phone className="h-5 w-5" /> 
+                    <a href="tel:88612906619">8 (861) 290-66-19</a>
+                  </li>
+                  <li className="flex items-center gap-2 font-bold text-[#25D366]">
+                    <MessageSquare className="h-5 w-5" /> 
+                    <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">+7 (928) 257-91-15</a>
+                  </li>
+                  <li className="flex items-center gap-2 font-bold text-[#229ED9]">
+                    <Send className="h-5 w-5" /> 
+                    <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer">@ExtraMed93</a>
+                  </li>
+                  <li className="flex items-center gap-2 font-medium text-slate-500">
+                    <Mail className="h-5 w-5 text-primary" /> 
+                    <a href="mailto:alexsamara134@yandex.ru">alexsamara134@yandex.ru</a>
+                  </li>
+                  <li className="text-sm pt-2">Круглосуточно без выходных</li>
+                </ul>
+              </div>
           </div>
           <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
             <p>© 2024 Extramed-Psy. Все права защищены. Информация на сайте не является публичной офертой.</p>
