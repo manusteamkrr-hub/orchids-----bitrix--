@@ -77,9 +77,11 @@ export default function ArticlesIndexPage() {
             <Link href="/articles" className="text-sm font-bold text-primary transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-0.5 after:bg-primary">Статьи</Link>
           </nav>
           <div className="flex items-center gap-4">
-            <Button size="lg" className="rounded-2xl font-bold px-6 shadow-xl shadow-primary/20 hover:scale-105 transition-all">
-              <Phone className="mr-2 h-5 w-5" />
-              +7 (861) 000-00-00
+            <Button size="lg" className="rounded-2xl font-bold px-6 shadow-xl shadow-primary/20 hover:scale-105 transition-all" asChild>
+              <a href="tel:88612906619">
+                <Phone className="mr-2 h-5 w-5" />
+                8 (861) 290-66-19
+              </a>
             </Button>
           </div>
         </div>
