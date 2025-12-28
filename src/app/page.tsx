@@ -227,11 +227,11 @@ export default function LandingPage() {
                     <MapPin className="h-4 w-4" /> г. Краснодар, ул. Лизы Чайкиной
                   </Badge>
                   <h1 className="text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl text-slate-900 leading-[1.05] mb-8">
-                    Пансионат для пожилых в Краснодаре: <span className="text-purple-600">профессиональный уход</span> и безопасность
+                    Пансионат для пожилых и инвалидов в Краснодаре. <span className="text-purple-600">Реабилитация</span>, которая возвращает к жизни
                   </h1>
                 </motion.div>
                 <motion.p variants={fadeIn} className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                  Ваш близкий в надежных руках. В пансионате «Extramed-Psy» на улице Лизы Чайкиной мы берем на себя все заботы о здоровье и комфорте пожилых людей. Мы не просто обеспечиваем проживание — мы возвращаем качество жизни, спокойствие для семьи и профессиональную помощь при самых сложных диагнозах. Круглосуточно, с заботой и по медицинским стандартам.
+                  Активные программы после инсульта, инфаркта и переломов. Профессиональный уход, круглосуточное наблюдение и специализированная помощь при деменции и болезни Альцгеймера. Мы возвращаем качество жизни вашим близким.
                 </motion.p>
                 <motion.div variants={fadeIn} className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 mt-4">
                   <Button size="lg" className="rounded-2xl px-12 bg-purple-600 hover:bg-purple-700 text-white shadow-2xl shadow-purple-200 h-16 text-lg font-black active:scale-95">
