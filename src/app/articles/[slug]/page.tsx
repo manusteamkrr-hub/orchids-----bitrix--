@@ -159,13 +159,38 @@ export default function ArticlePage() {
                 <div className="absolute top-0 right-0 p-4 opacity-20">
                   <Heart className="w-24 h-24 rotate-12 fill-white" />
                 </div>
-                <h3 className="text-2xl font-black mb-4 relative z-10">Нужна консультация?</h3>
-                <p className="text-slate-400 text-sm mb-8 leading-relaxed relative z-10">
-                  Наши специалисты свяжутся с вами в течение 15 минут для первичной бесплатной консультации.
-                </p>
-                <Button size="lg" className="w-full rounded-2xl font-bold bg-primary hover:bg-primary/90 text-white relative z-10 h-14">
-                  <Phone className="mr-2 h-5 w-5" /> Заказать звонок
-                </Button>
+                <h3 className="text-2xl font-black mb-6 relative z-10 leading-tight">Нужна помощь эксперта?</h3>
+                
+                <div className="space-y-6 relative z-10">
+                  <div className="group">
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Телефон клиники</p>
+                    <a href="tel:88612906619" className="text-xl font-black text-white hover:text-primary transition-colors flex items-center gap-2">
+                      <Phone className="w-5 h-5 text-primary" /> 8 (861) 290-66-19
+                    </a>
+                  </div>
+
+                  <div className="group">
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">WhatsApp</p>
+                    <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-2">
+                      <MessageSquare className="w-5 h-5 text-[#25D366]" /> +7 (928) 257-91-15
+                    </a>
+                  </div>
+
+                  <div className="group">
+                    <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Telegram</p>
+                    <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-300 hover:text-white transition-colors flex items-center gap-2">
+                      <Send className="w-5 h-5 text-[#229ED9]" /> @ExtraMed93
+                    </a>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
+                  <Button size="lg" className="w-full rounded-2xl font-bold bg-primary hover:bg-primary/90 text-white h-14 shadow-lg shadow-primary/20" asChild>
+                    <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
+                      Написать нам
+                    </a>
+                  </Button>
+                </div>
               </div>
 
               {/* Related Articles */}
