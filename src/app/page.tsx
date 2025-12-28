@@ -355,6 +355,16 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* SEO SECTION */}
+        <section className="py-16 bg-white border-t">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-2xl font-black text-slate-800 mb-6">Лучшие интернаты для престарелых в Краснодарском крае</h2>
+            <p className="max-w-4xl mx-auto text-slate-500 font-medium leading-relaxed">
+              Extramed-Psy — это хорошие интернаты (пансионы) для престарелых людей и инвалидов в Краснодарском крае. Мы предлагаем комфортные условия проживания, круглосуточное медицинское наблюдение и индивидуальные программы реабилитации. Наш платный пансионат для пожилых людей обеспечивает атмосферу заботы и домашнего уюта, помогая вернуться к полноценной жизни.
+            </p>
+          </div>
+        </section>
+
         {/* PRICING SECTION */}
         <section id="prices" className="py-20 lg:py-32 bg-slate-50">
           <div className="container mx-auto px-4">
