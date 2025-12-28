@@ -231,7 +231,7 @@ export default function LandingPage() {
                   </h1>
                 </motion.div>
                 <motion.p variants={fadeIn} className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-                  Реабилитация, которая возвращает к жизни. Активные программы после инсульта, инфаркта и переломов. Профессиональный уход и круглосуточная поддержка.
+                  Реабилитация, которая возвращает к жизни. Активные программы после инсульта, инфаркта и переломов.
                 </motion.p>
                 <motion.div variants={fadeIn} className="flex flex-col sm:flex-row justify-center lg:justify-start gap-5 mt-4">
                   <Button size="lg" className="rounded-2xl px-12 bg-purple-600 hover:bg-purple-700 text-white shadow-2xl shadow-purple-200 h-16 text-lg font-black active:scale-95">
