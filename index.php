@@ -545,16 +545,26 @@ if ($page === 'articles') {
                 </div>
                 <div>
                     <h4 style="margin-bottom: 20px; font-weight: 800;">Адрес</h4>
-                    <p style="opacity: 0.7;">г. Краснодар, ул. Лизы Чайкиной</p>
+                    <p style="opacity: 0.7;">г. Краснодар, ул. Лизы Чайкиной, д. 3/6, этаж 2</p>
                 </div>
                 <div>
                     <h4 style="margin-bottom: 20px; font-weight: 800;">Контакты</h4>
                     <a href="tel:88612906619" style="font-size: 1.5rem; font-weight: 900; color: white;">8 (861) 290-66-19</a>
-                    <p style="opacity: 0.7; margin-top: 10px;">alexsamara134@yandex.ru</p>
+                    <p style="opacity: 0.7; margin-top: 10px;">E-mail: alexsamara134@yandex.ru</p>
+                    <p style="opacity: 0.7; margin-top: 5px;">WA: 8 (861) 290-66-19</p>
+                    <p style="opacity: 0.7; margin-top: 5px;">TG: @ExtraMed93</p>
                 </div>
             </div>
-            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; opacity: 0.5; font-size: 0.8rem;">
-                © 2024 Extramed-Psy. Все права защищены.
+            <div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); text-align: left; opacity: 0.5; font-size: 0.8rem;">
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+                    <div>
+                        © 2024 Extramed-Psy. Все права защищены.<br>
+                        Медицинские услуги оказывает ООО “ЭКСТРАМЕД” | ИНН 2312324163 | Лицензия Л041-01126-23/01219708
+                    </div>
+                    <div>
+                        <a href="#" style="color: white; opacity: 0.6;">Политика конфиденциальности</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
