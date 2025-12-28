@@ -379,9 +379,9 @@ if ($page === 'articles') {
         <section class="hero">
             <div class="container hero-grid">
                 <div>
-                    <h1 style="color: var(--primary);">Пансионат для пожилых в Краснодаре</h1>
-                    <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-muted); font-weight: 700;">Профессиональный уход и безопасность для ваших близких</h2>
-                    <p>Ваш близкий в надежных руках. В пансионате «Extramed-Psy» на улице Лизы Чайкиной мы берем на себя все заботы о здоровье и комфорте пожилых людей. Мы не просто обеспечиваем проживание — мы возвращаем качество жизни.</p>
+                    <h1 style="color: var(--primary);">Пансионат для пожилых и инвалидов в Краснодаре</h1>
+                    <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-muted); font-weight: 700;">Реабилитация, которая возвращает к жизни</h2>
+                    <p>Активные программы после инсульта, инфаркта и переломов. Профессиональный уход, круглосуточное наблюдение и специализированная помощь при деменции. Мы возвращаем качество жизни вашим близким.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px;">
                         <a href="tel:88612906619" class="btn btn-primary">Консультация врача</a>
                         <button class="btn btn-outline" onclick="toggleModal(true)">Онлайн-экскурсия</button>
