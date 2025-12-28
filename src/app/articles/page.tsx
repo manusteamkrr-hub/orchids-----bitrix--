@@ -289,8 +289,33 @@ export default function ArticlesIndexPage() {
             </div>
             <div className="space-y-6 text-center md:text-right">
               <h4 className="font-bold text-slate-900 uppercase tracking-widest text-xs mb-2">Контакты</h4>
-              <p className="text-2xl font-black text-primary">+7 (861) 000-00-00</p>
-              <p className="text-sm text-slate-500">Краснодар, ул. Лизы Чайкиной</p>
+              <div className="flex flex-col gap-3">
+                <a href="tel:88612906619" className="text-2xl font-black text-primary hover:opacity-80 transition-opacity tracking-tight">8 (861) 290-66-19</a>
+                <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Телефон клиники</p>
+              </div>
+              
+              <div className="pt-4 space-y-4">
+                <div className="flex flex-col gap-1">
+                  <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-700 hover:text-primary transition-colors flex items-center justify-center md:justify-end gap-2">
+                    <MessageSquare className="w-5 h-5 text-[#25D366]" /> +7 (928) 257-91-15
+                  </a>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">WhatsApp консультации</p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer" className="text-lg font-bold text-slate-700 hover:text-primary transition-colors flex items-center justify-center md:justify-end gap-2">
+                    <Send className="w-5 h-5 text-[#229ED9]" /> @ExtraMed93
+                  </a>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Telegram канал</p>
+                </div>
+
+                <div className="flex flex-col gap-1">
+                  <a href="mailto:alexsamara134@yandex.ru" className="text-sm font-bold text-slate-700 hover:text-primary transition-colors flex items-center justify-center md:justify-end gap-2">
+                    <Mail className="w-4 h-4 text-primary" /> alexsamara134@yandex.ru
+                  </a>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Электронная почта</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="mt-20 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
