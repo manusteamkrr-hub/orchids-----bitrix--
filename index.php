@@ -381,6 +381,7 @@ if ($page === 'articles') {
             <div class="container hero-grid">
                 <div>
                     <h1 style="color: var(--primary);">Пансионат для пожилых и инвалидов в Краснодаре</h1>
+                    <p style="color: var(--primary); font-weight: 800; margin-bottom: 15px;">Мы — частный дом престарелых в Краснодаре и платный пансионат для пожилых людей.</p>
                     <p style="font-size: 1.2rem; color: var(--text-muted); font-weight: 700; margin-bottom: 30px;">
                         Реабилитация, которая возвращает к жизни. Активные программы после инсульта, инфаркта и переломов.
                     </p>
@@ -395,7 +396,16 @@ if ($page === 'articles') {
             </div>
         </section>
 
-        <section id="gallery" style="background: #fff;">
+        <section id="seo-info" style="background: #fff; border-top: 1px solid #eee; padding: 60px 0;">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 20px;">Лучшие интернаты для престарелых в Краснодарском крае</h2>
+                <p style="max-width: 900px; margin: 0 auto; color: var(--text-muted); font-weight: 700; line-height: 1.6;">
+                    Extramed-Psy — это хорошие интернаты (пансионы) для престарелых людей и инвалидов в Краснодарском крае. Мы предлагаем комфортные условия проживания, круглосуточное медицинское наблюдение и индивидуальные программы реабилитации. Наш платный пансионат для пожилых людей обеспечивает атмосферу заботы и домашнего уюта, помогая вернуться к полноценной жизни.
+                </p>
+            </div>
+        </section>
+
+        <section id="gallery" style="background: #fafafa;">
             <div class="container">
                 <div class="section-title">
                     <span class="badge">Фотогалерея</span>
