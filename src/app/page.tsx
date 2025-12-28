@@ -134,8 +134,13 @@ export default function LandingPage() {
       </header>
 
       {/* Floating Action Button for Mobile */}
-      <div className="fixed bottom-6 right-6 z-40 md:hidden">
-        <a href="tel:+78610000000">
+      <div className="fixed bottom-6 right-6 z-40 md:hidden flex flex-col gap-3">
+        <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
+          <Button size="lg" className="h-14 w-14 rounded-full bg-[#25D366] text-white shadow-2xl border-4 border-white">
+            <MessageSquare className="h-6 w-6" />
+          </Button>
+        </a>
+        <a href="tel:88612906619">
           <Button size="lg" className="h-14 w-14 rounded-full bg-primary text-primary-foreground shadow-2xl animate-pulse border-4 border-white">
             <Phone className="h-6 w-6" />
           </Button>
