@@ -244,6 +244,7 @@ if ($page === 'articles') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $seo_title; ?></title>
     <meta name="description" content="<?php echo $seo_description; ?>">
+    <meta name="keywords" content="<?php echo $seo_keywords; ?>">
     <style>
         :root {
             --primary: #7c3aed;
