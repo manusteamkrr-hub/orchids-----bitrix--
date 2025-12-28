@@ -210,7 +210,9 @@ $clinic_photos = [
     ["url" => "images/clinic-4.png", "caption" => "Зона приема"],
     ["url" => "images/clinic-5.png", "caption" => "Места для отдыха"],
     ["url" => "images/clinic-6.png", "caption" => "Коридоры"],
-    ["url" => "images/clinic-7.png", "caption" => "Интерьер"]
+    ["url" => "images/clinic-7.png", "caption" => "Интерьер"],
+    ["url" => "images/clinic-8.png", "caption" => "Санузел"],
+    ["url" => "images/clinic-9.png", "caption" => "Зона ожидания"]
 ];
 
 // Routing
