@@ -3,6 +3,7 @@ export interface Article {
   slug: string;
   content: string[];
   excerpt: string;
+  category?: string;
 }
 
 export const articles: Article[] = [
