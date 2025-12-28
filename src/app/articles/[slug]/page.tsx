@@ -148,9 +148,19 @@ export default function ArticlePage() {
                   <span className="text-slate-900 truncate max-w-[200px]">{article.title}</span>
                 </div>
 
-                <Badge className="mb-6 bg-primary/10 text-primary border-none px-4 py-1.5 rounded-lg font-bold text-xs uppercase tracking-widest">
-                  <Sparkles className="w-3 h-3 mr-2 fill-current" /> Экспертный материал
-                </Badge>
+                <div className="relative aspect-[21/9] rounded-[2.5rem] overflow-hidden mb-12 shadow-2xl">
+                  <img 
+                    src={article.image} 
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8">
+                    <Badge className="bg-primary text-white border-none px-4 py-1.5 rounded-lg font-bold text-xs uppercase tracking-widest">
+                      <Sparkles className="w-3 h-3 mr-2 fill-current" /> Экспертный материал
+                    </Badge>
+                  </div>
+                </div>
                 
                 <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tight">
                   {article.title}
@@ -184,16 +194,63 @@ export default function ArticlePage() {
                   ))}
                 </div>
 
+                {/* Contact Info Block */}
+                <div className="mt-16 bg-slate-50 rounded-[2.5rem] p-10 border border-slate-100 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
+                    <Heart className="w-64 h-64 text-slate-900 fill-current" />
+                  </div>
+                  <h3 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-3">
+                    <MessageSquare className="w-6 h-6 text-primary" /> Связаться с нами
+                  </h3>
+                  <div className="grid sm:grid-cols-2 gap-8 relative z-10">
+                    <div className="space-y-4">
+                      <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Телефон клиники</p>
+                        <a href="tel:88612906619" className="text-xl font-black text-primary hover:opacity-80 transition-opacity">
+                          8 (861) 290-66-19
+                        </a>
+                      </div>
+                      <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Консультации по What's app</p>
+                        <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="text-xl font-black text-[#25D366] hover:opacity-80 transition-opacity">
+                          +7 (928) 257-91-15
+                        </a>
+                      </div>
+                    </div>
+                    <div className="space-y-4">
+                      <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Консультации по Telegram</p>
+                        <a href="https://t.me/ExtraMed93" target="_blank" rel="noopener noreferrer" className="text-xl font-black text-[#229ED9] hover:opacity-80 transition-opacity">
+                          @ExtraMed93
+                        </a>
+                      </div>
+                      <div className="p-6 bg-white rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Консультации по электронной почте</p>
+                        <a href="mailto:alexsamara134@yandex.ru" className="text-lg font-bold text-slate-700 hover:text-primary transition-colors truncate block">
+                          alexsamara134@yandex.ru
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Article Footer */}
                 <div className="mt-20 pt-12 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-8">
                   <div className="flex items-center gap-4">
-                    <Button variant="outline" className="rounded-2xl gap-2 font-bold border-slate-200">
+                    <Button variant="outline" className="rounded-2xl gap-2 font-bold border-slate-200" onClick={() => {
+                      if (navigator.share) {
+                        navigator.share({
+                          title: article.title,
+                          url: window.location.href,
+                        });
+                      }
+                    }}>
                       <Share2 className="w-4 h-4" /> Поделиться
                     </Button>
                   </div>
                   <div className="flex items-center gap-2 text-sm font-bold text-slate-400">
                     <CheckCircle2 className="w-5 h-5 text-primary" />
-                    Статья проверена врачом-гериатром
+                    Статья проверена специалистами Extramed-Psy
                   </div>
                 </div>
               </motion.div>
@@ -234,7 +291,7 @@ export default function ArticlePage() {
                 <div className="mt-8 pt-8 border-t border-white/10 relative z-10">
                   <Button size="lg" className="w-full rounded-2xl font-bold bg-primary hover:bg-primary/90 text-white h-14 shadow-lg shadow-primary/20" asChild>
                     <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer">
-                      Написать нам
+                      Задать вопрос
                     </a>
                   </Button>
                 </div>
