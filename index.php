@@ -410,8 +410,9 @@ if ($page === 'articles') {
         <section id="articles">
             <div class="container">
                 <div class="section-title">
-                    <span class="badge">База знаний • <?php echo count($articles); ?> статей</span>
-                    <h2>Полезные материалы</h2>
+                    <span class="badge">База знаний</span>
+                    <h2><?php echo count($articles); ?> полезных материалов</h2>
+                    <p style="color: var(--text-muted); font-weight: 700; margin-top: 10px;">Актуальные статьи от наших экспертов</p>
                 </div>
                 <div class="grid-3">
                     <?php foreach (array_slice($articles, 0, 3) as $a): ?>
