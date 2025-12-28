@@ -134,11 +134,16 @@ export default function ArticlePage() {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-10 left-10">
-                    <Badge className="bg-white/90 text-purple-900 border-none px-5 py-2 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl">
-                      {article.category === 'emergency' ? 'Экстренно' : article.category === 'elderly' ? 'Пожилым' : 'Медицина'}
-                    </Badge>
-                  </div>
+                    <div className="absolute bottom-10 left-10">
+                      <Badge className="bg-white/90 text-purple-900 border-none px-5 py-2 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl">
+                        {article.category === 'emergency' ? 'Экстренно' : 
+                         article.category === 'elderly' ? 'Пожилым' : 
+                         article.category === 'psychiatry' ? 'Психиатрия' :
+                         article.category === 'psychotherapy' ? 'Психотерапия' :
+                         article.category === 'rehab' ? 'Реабилитация' : 'Медицина'}
+                      </Badge>
+                    </div>
+
                 </div>
                 
                 <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-10 leading-[1.05] tracking-tight">
