@@ -205,12 +205,12 @@ $articles = [
 
 // Gallery Photos
 $clinic_photos = [
-    ["url" => "/images/clinic-1.webp", "caption" => "Комфортные палаты"],
-    ["url" => "/images/clinic-3.webp", "caption" => "Здание пансионата"],
-    ["url" => "/images/clinic-4.webp", "caption" => "Зона приема"],
-    ["url" => "/images/clinic-5.webp", "caption" => "Места для отдыха"],
-    ["url" => "/images/clinic-6.webp", "caption" => "Коридоры"],
-    ["url" => "/images/clinic-7.webp", "caption" => "Интерьер"]
+    ["url" => "images/clinic-1.webp", "caption" => "Комфортные палаты"],
+    ["url" => "images/clinic-3.webp", "caption" => "Здание пансионата"],
+    ["url" => "images/clinic-4.webp", "caption" => "Зона приема"],
+    ["url" => "images/clinic-5.webp", "caption" => "Места для отдыха"],
+    ["url" => "images/clinic-6.webp", "caption" => "Коридоры"],
+    ["url" => "images/clinic-7.webp", "caption" => "Интерьер"]
 ];
 
 // Routing
