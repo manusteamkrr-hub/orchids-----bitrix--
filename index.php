@@ -380,8 +380,9 @@ if ($page === 'articles') {
             <div class="container hero-grid">
                 <div>
                     <h1 style="color: var(--primary);">Пансионат для пожилых и инвалидов в Краснодаре</h1>
-                    <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--text-muted); font-weight: 700;">Реабилитация, которая возвращает к жизни</h2>
-                    <p>Активные программы после инсульта, инфаркта и переломов. Профессиональный уход, круглосуточное наблюдение и специализированная помощь при деменции. Мы возвращаем качество жизни вашим близким.</p>
+                    <p style="font-size: 1.2rem; color: var(--text-muted); font-weight: 700; margin-bottom: 30px;">
+                        Реабилитация, которая возвращает к жизни. Активные программы после инсульта, инфаркта и переломов.
+                    </p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px;">
                         <a href="tel:88612906619" class="btn btn-primary">Консультация врача</a>
                         <button class="btn btn-outline" onclick="toggleModal(true)">Онлайн-экскурсия</button>
