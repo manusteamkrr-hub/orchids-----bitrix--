@@ -577,6 +577,7 @@ export default function LandingPage() {
               <h4 className="font-bold text-primary mb-6 text-lg">Навигация</h4>
               <ul className="space-y-4 text-muted-foreground">
                 <li><a href="#hero" className="hover:text-primary transition-colors">Главная</a></li>
+                <li><a href="/articles" className="hover:text-primary transition-colors font-bold">Статьи</a></li>
                 <li><a href="#conditions" className="hover:text-primary transition-colors">Заболевания</a></li>
                 <li><a href="#approach" className="hover:text-primary transition-colors">Наш подход</a></li>
                 <li><a href="#prices" className="hover:text-primary transition-colors">Стоимость</a></li>
