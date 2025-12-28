@@ -6,7 +6,8 @@ import { useParams, useRouter } from "next/navigation";
 import { 
   Heart, ArrowLeft, Phone, Calendar, User, 
   Share2, Clock, CheckCircle2, Sparkles,
-  ChevronRight, Brain, Activity, Users, ShieldAlert
+  ChevronRight, Brain, Activity, Users, ShieldAlert,
+  MessageSquare, Send, Mail
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
