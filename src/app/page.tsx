@@ -100,6 +100,7 @@ export default function LandingPage() {
                   <a href="#approach" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Наш подход</a>
                   <a href="#prices" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Стоимость</a>
                   <a href="#reviews" className="text-lg font-medium hover:text-primary transition-colors py-3 border-b">Отзывы</a>
+                  <a href="/articles" className="text-lg font-bold text-primary hover:text-primary/80 transition-colors py-3 border-b">Статьи</a>
                   <div className="mt-4 pt-4">
                     <p className="text-sm text-muted-foreground mb-4">Свяжитесь с нами:</p>
                     <Button className="w-full justify-start bg-primary text-primary-foreground font-bold py-6">
