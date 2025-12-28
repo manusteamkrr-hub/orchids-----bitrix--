@@ -67,6 +67,8 @@ const clinicPhotos = [
   { url: "/images/clinic-5.png", caption: "Зона отдыха" },
   { url: "/images/clinic-6.png", caption: "Современные коридоры" },
   { url: "/images/clinic-7.png", caption: "Комфортные номера" },
+  { url: "/images/clinic-8.png", caption: "Санузел" },
+  { url: "/images/clinic-9.png", caption: "Зона ожидания" },
   { url: "/images/clinic-hero.png", caption: "Внешний вид" },
 ];
 
