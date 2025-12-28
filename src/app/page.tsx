@@ -247,7 +247,7 @@ export default function LandingPage() {
                 className="relative aspect-square lg:aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl border-[12px] border-white"
               >
                 <Image 
-                  src="/images/clinic-3.webp" 
+                  src="/images/clinic-3.png" 
                   alt="Пансионат Extramed-Psy"
                   fill
                   className="object-cover"
