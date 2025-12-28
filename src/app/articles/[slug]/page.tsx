@@ -7,10 +7,17 @@ import {
   Heart, ArrowLeft, Phone, Calendar, User, 
   Share2, Clock, CheckCircle2, Sparkles,
   ChevronRight, Brain, Activity, Users, ShieldAlert,
-  MessageSquare, Send, Mail
+  MessageSquare, Send, Mail, Menu
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { articles } from "@/lib/articles-data";
 import { motion, useScroll, useSpring } from "framer-motion";
 
