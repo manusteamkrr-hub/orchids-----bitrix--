@@ -229,6 +229,7 @@ export default function LandingPage() {
                   <h1 className="text-4xl font-black tracking-tight sm:text-6xl lg:text-7xl text-slate-900 leading-[1.05] mb-8">
                     Пансионат для пожилых и инвалидов в <span className="text-purple-600">Краснодаре</span>
                   </h1>
+                  <p className="text-purple-600 font-bold mb-4 lg:text-left text-center">Мы — частный дом престарелых в Краснодаре и платный пансионат для пожилых людей.</p>
                 </motion.div>
                 <motion.p variants={fadeIn} className="text-lg sm:text-xl text-slate-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
                   Реабилитация, которая возвращает к жизни. Активные программы после инсульта, инфаркта и переломов.
