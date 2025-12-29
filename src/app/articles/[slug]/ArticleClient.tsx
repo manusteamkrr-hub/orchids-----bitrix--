@@ -17,14 +17,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { articles } from "@/lib/articles-data";
+import { Article, articles } from "@/lib/articles-data";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { useRouter } from "next/navigation";
 
-export default function ArticleClient({ slug }: { slug: string }) {
-  const router = useRouter();
-  const decodedSlug = decodeURIComponent(slug);
-  const article = articles.find((a) => a.slug === decodedSlug);
+interface ArticleClientProps {
+  article: Article;
+}
+
+export default function ArticleClient({ article }: ArticleClientProps) {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -33,30 +33,10 @@ export default function ArticleClient({ slug }: { slug: string }) {
   });
 
   const relatedArticles = useMemo(() => {
-    if (!article) return [];
     return articles
       .filter(a => a.slug !== article.slug && (a.category === article.category || !article.category))
       .slice(0, 3);
   }, [article]);
-
-  if (!article) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-[#fafafa]">
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          className="text-center"
-        >
-          <div className="w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6 text-purple-600">
-            <Heart className="w-12 h-12 fill-current" />
-          </div>
-          <h1 className="text-3xl font-black text-slate-900 mb-4 tracking-tighter">Материал не найден</h1>
-          <p className="text-slate-500 mb-8 max-w-xs mx-auto font-medium">К сожалению, запрашиваемая статья была перемещена или удалена.</p>
-          <Button size="lg" className="rounded-2xl px-8 bg-purple-600 hover:bg-purple-700 font-black" onClick={() => router.push("/articles")}>Вернуться в каталог</Button>
-        </motion.div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-white text-[#1e1b4b] selection:bg-purple-200 selection:text-purple-900">
@@ -74,7 +54,7 @@ export default function ArticleClient({ slug }: { slug: string }) {
               <Heart className="h-7 w-7 fill-current" />
             </div>
             <div className="flex flex-col">
-              <span className="text-2xl font-black tracking-tighter text-purple-700 leading-none uppercase">Extramed-Psy</span>
+              <span className="text-2xl font-black tracking-tighter text-purple-700 leading-none">Extramed-Psy</span>
               <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Краснодар</span>
             </div>
           </Link>
@@ -92,13 +72,13 @@ export default function ArticleClient({ slug }: { slug: string }) {
 
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="lg:hidden rounded-xl bg-purple-50 hover:bg-purple-100">
+                <Button variant="ghost" size="icon" className="lg:hidden">
                   <Menu className="h-7 w-7 text-purple-600" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right">
                 <SheetHeader>
-                  <SheetTitle className="text-left text-purple-700 font-black">МЕНЮ</SheetTitle>
+                  <SheetTitle className="text-left text-purple-700 font-black">Меню</SheetTitle>
                 </SheetHeader>
                 <nav className="mt-8 flex flex-col gap-4">
                   <Link href="/" className="text-lg font-bold hover:text-purple-600 py-3 border-b">Главная</Link>
@@ -186,10 +166,10 @@ export default function ArticleClient({ slug }: { slug: string }) {
                     <h3 className="text-3xl font-black mb-6">Нужна экстренная консультация?</h3>
                     <p className="text-xl opacity-90 mb-10 max-w-2xl font-medium leading-relaxed">Наши специалисты работают круглосуточно. Мы поможем в самых сложных ситуациях, гарантируем анонимность и профессионализм.</p>
                     <div className="flex flex-col sm:flex-row gap-6">
-                      <a href="tel:88612906619" className="bg-white text-purple-700 px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-xl flex items-center justify-center">
+                      <a href="tel:88612906619" className="btn bg-white text-purple-700 px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-xl">
                         <Phone className="w-6 h-6 mr-2" /> 8 (861) 290-66-19
                       </a>
-                      <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-white/10 transition-colors flex items-center justify-center">
+                      <a href="https://wa.me/79282579115" target="_blank" rel="noopener noreferrer" className="btn border-2 border-white text-white px-10 py-5 rounded-2xl font-black text-xl hover:bg-white/10 transition-colors">
                         Написать в WhatsApp
                       </a>
                     </div>
